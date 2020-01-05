@@ -1,5 +1,21 @@
 import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import logging from './config/logging';
 
-console.log ('Hello Project.');
+const logger = logging (module);
 
-console.log ('From dotenv config', process.env.TEST_CONFIG);
+const app = express ();
+app.use (cors ());
+app.use (express.json ());
+
+const port = process.env.PORT || 3000;
+
+app.listen (port, () => {
+  console.log (`Server now running on port: ${port}`);
+});
+
+app.get ('/', (req, res) => {
+  logger.info ('Test log message! hey!');
+  res.json ({response: 'Hello World!'});
+});
