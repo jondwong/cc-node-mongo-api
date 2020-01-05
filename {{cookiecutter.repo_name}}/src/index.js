@@ -3,6 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import logging from './config/logging';
 
+import userRouter from './routes/user';
+
 const logger = logging (module);
 
 const app = express ();
@@ -19,3 +21,5 @@ app.get ('/', (req, res) => {
   logger.info ('Test log message! hey!');
   res.json ({response: 'Hello World!'});
 });
+
+app.use ('/user', userRouter);
