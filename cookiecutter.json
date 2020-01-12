@@ -1,3 +1,4 @@
 {
-    "repo_name": "project"
+    "repo_name": "project",
+    "db_name": "testDB"
 }

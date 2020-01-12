@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import logging from './config/logging';
-
+import DB from './db';
 import userRouter from './routes/user';
 
 const logger = logging (module);
