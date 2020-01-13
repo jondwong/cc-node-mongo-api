@@ -20,9 +20,9 @@ REPO
 |       |- user.js : processes all user
 ```
 
-### Routes
+#### Routes
 Routes use the `@request` decorator on the class functions as specified in `ROOT/src/routes/route_utils.js`. This wraps the async implementation for each route in a try catch that will send an error response on failures. It also with attach it to the router object that gets returned. It will deliver the object returned.
-#### Sample example
+##### Sample example
 ```
 class UserRouter {
   @request (router.post.bind (router), '/')
@@ -36,7 +36,7 @@ class UserRouter {
 }
 ```
 
-You can add aditional routes from the template located at http://github.com/jondwong/dotfiles/.cookiecutters/router.js.
+You can add aditional routes from the template located at https://github.com/jondwong/dotfiles/blob/master/.cookiecutters/router.js.
 
 To generate, I wrote a utility called chip to generate single files from a template instead of a repo. Find instructions for installation and usage at http://github.com/jondwong/chip.
 
