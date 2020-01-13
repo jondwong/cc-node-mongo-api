@@ -1,10 +1,11 @@
 import express from 'express';
 import User from '../models/user';
-import {log, request} from './route_utils';
+import {request} from './route_utils';
+import logging from './config/logging';
 
+const logger = logging(module);
 const router = express.Router ();
 
-console.log (request);
 class UserRouter {
   @request (router.post.bind (router), '/')
   static async create (req, res) {
